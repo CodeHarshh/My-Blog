@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= heading %></title>
+</head>
+<body>
+  <h1><%= heading %></h1>
+  <form action="<%= post ? '/posts/' + post.id + '?_method=PATCH' : '/posts' %>" method="POST">
+    <input type="text" name="title" placeholder="Title" value="<%= post ? post.title : '' %>" required><br>
+    <textarea name="content" placeholder="Content" required><%= post ? post.content : '' %></textarea><br>
+    <input type="text" name="author" placeholder="Author" value="<%= post ? post.author : '' %>" required><br>
+    <button type="submit"><%= submit %></button>
+  </form>
+</body>
+</html>
